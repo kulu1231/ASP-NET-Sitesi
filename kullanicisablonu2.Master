@@ -1,0 +1,192 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="kullanicisablonu2.master.cs" Inherits="webtasarimperformansi.kullanicisablonu2" %>
+
+<!DOCTYPE html>
+
+       
+  
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="shortcut icon" href="images/hh.ico"/>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous" />
+    <link rel="stylesheet" href="sss/sss.css" type="text/css" media="all" /> 
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+      
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="sss/sss.min.js"></script> 
+        <script>
+            jQuery(function ($) {
+                $('.slider').sss();
+            });
+        </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(window).on('scroll', function () {
+                var scrolltop = $(this).scrollTop();
+                if (scrolltop >= 180) {
+                    $('.menu2').css("position", "fixed");
+                    $('.menu2').css("top", "0");
+                    $('.menu2').css("z-index", "1000");
+                    $('.menu2 ul li a').css("border-color", "lightblue");
+                    $('.menu2 ul li a').css("background-color", "white");
+                    $('.span a').css("background-color", "lightblue");
+                    $('.span a').css("color", "white");
+                    $('.span a').css("border-color", "white");
+                }
+                else {
+                    $('.menu2').removeAttr('style');
+                    $('.menu2 ul li a').removeAttr('style');
+                }
+            });
+        });
+        </script>
+     <script type="text/javascript">
+         function uyegiris() {
+             document.getElementById("uyelik").style.display = "block";
+
+
+         }
+</script>
+    <style type="text/css">
+       
+        .degis
+{
+    position:absolute;
+        top:8px;
+        left: 1049px;
+        width:200px;
+        z-index:999;
+    }
+.degis ul
+{
+    margin:0px;
+    padding:0px;
+    list-style:none;
+}
+.degis ul li
+{
+
+}
+.degis ul li a
+{
+    display:block;
+    height:35px;
+    color:black;
+    text-align:center;
+    line-height:25px;
+}
+.degis ul li a:hover
+{
+    color:gray;
+    background:#EDF1F4;
+    
+    
+}
+.degis ul li ul
+{
+    display:none;
+    top:5px;
+
+}
+.degis ul li:hover ul
+{
+    display:block;
+    color:gray;
+    background:lightblue;
+
+}
+.degis ul li ul li:hover
+{
+    font-weight:bold;
+    color:gray;
+    background:#EDF1F4;
+    font-size:24px;
+}
+    </style>    
+</head>
+<body>
+     <form id="form1" runat="server">
+   <div class="kapsayici">
+       
+  <div class="banner1">
+       <div class="degis">
+           <ul type="square"><li><a href="#">Profilim(<asp:Label ID="kullanici" runat="server" Text="Label"></asp:Label>)</a>
+               
+           <ul>
+               <li><a href="sifreguncel.aspx">Şifreyi Güncelle</a></li>
+               <li><a href="epostadegis.aspx">E-postayı Değiştir</a></li>
+           </ul></li>
+           </ul>
+
+       </div>
+     <div class="hg"><asp:Label ID="Label2" runat="server"></asp:Label></div>
+      <span class="sag"><asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/logoutt.png" Width="50" Height="35" OnClick="ImageButton1_Click1" />
+ &nbsp;</span></div>
+       
+        
+  <div class="banner2">
+    <div id="apDiv20"><div id="apDiv11"><img src="../images/callme.png" width="192" height="14" /></div>
+    <div id="apDiv12"><a href="#"><i class="fab fa-facebook-f"></i></a></div>
+ 
+  <div id="apDiv15"><a href="#"><i class="fab fa-twitter"></i></a></div>
+  <div id="apDiv16"><a href="#"><i class="fab fa-instagram"></i></a></div>
+  <div id="apDiv17"><a href="#"><i class="fab fa-google-plus-g"></i></a></div>
+  <div id="apDiv18"><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+  </div>
+ <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    
+
+       <div class="menu2">
+           <center>
+               <ul>
+                   <li><a href="index.aspx">Ana Sayfa</a></li>
+                   <li><a href="../hakkimizda.aspx">Hakkımızda</a></li>
+                   <li><a href="../hastanelerimiz.aspx">Hastanelerimiz</a></li>
+                   <li><a href="../doktorlarimiz.aspx">Doktorlarımız</a></li>
+                   <li><a href="../tibbihizmet.aspx">Tıbbi Hizmetlerimiz</a></li>
+                   <li><a href="../onlinehizmet.aspx">Online Hizmetlerimiz</a></li>
+                   <li><a href="../bizeulas.aspx">Bize Ulaşın</a></li>
+               </ul>
+           </center>
+       </div>
+       </asp:ContentPlaceHolder>
+  
+  <div id="uyelik">
+     <table style="width:100%;">
+        <tr>
+            <td>
+                <asp:TextBox ID="TextBox1" runat="server" placeholder="Kullanıcı Adı"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" placeholder="Şifre"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+               
+                <asp:Label ID="Label1" runat="server"></asp:Label>
+            </td>
+        </tr>
+    </table>
+    Hesabın yok mu? <a href="uyeol.aspx">Kaydol</a></div>
+<span class="banner2"><a href="index2.aspx"><img alt="" class="auto-style1" src="../images/logo.jpg" /></a></span></div>
+
+    
+
+<div id="icerik">
+  <div id="apDiv1">
+    <h1><asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"> </asp:ContentPlaceHolder></h1></div>
+  <div id="apDiv21"><asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server"> </asp:ContentPlaceHolder></div>
+</div>
+</div>  
+     
+
+
+  </form>
+</body>
+</html>
+
