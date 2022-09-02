@@ -1,0 +1,329 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="adminsablon.master.cs" Inherits="webtasarimperformansi.admin.adminsablon" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Yönetim Paneli</title>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"/> 
+    <link rel="shortcut icon" href="images/Aha-Soft-Free-Large-Boss-Admin.ico" />
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="sss/admin.css" />
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $(window).on('scroll', function () {
+                 var scrolltop = $(this).scrollTop();
+                 if (scrolltop >= 52) {
+                     $('.banner').css("position", "fixed");
+                     $('.banner').css("top", "0");
+                     $('.banner').css("z-index", "1000");
+                    
+
+                 }
+                 else {
+                     $('.banner').removeAttr('style');
+                 
+                 }
+             });
+         });
+        </script>
+    
+    <style type="text/css">
+#kapsayici {
+	position:relative;
+	margin:auto;
+	width: 1200px;
+	height: auto;
+	z-index: 1;
+}
+.banner {
+	position: absolute;
+	width: 1200px;
+	height: 52px;
+	z-index: 1;
+	background-color: #1F1F1F;
+    top:0px;
+}
+.solmenu {
+	position: absolute;
+	width: 220px;
+	height: 610px;
+	z-index: 2;
+	top: 52px;
+	left: 0px;
+	background-color: #3D3D3D;
+}
+.solmenu ul
+{
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+.solmenu ul li a
+{
+	display:block;
+	color:#AFAAA6;
+	width:220px;
+	text-align:center;
+	height:50px;
+	line-height:50px;
+	text-decoration:none;
+	
+}
+.solmenu ul li a:hover
+{
+	background:#E02221;
+	color:white;
+    border-bottom:1px solid white;
+}
+.aktif a
+{
+    background-color:#E02221;
+    color:#FFFFFF;
+}
+.baslik {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 24px;
+	color: #FFF;
+	line-height:50px;
+}
+
+   
+#bebek
+{
+    	position: absolute;
+	width: 30px;
+	height: 22px;
+	z-index: 2;
+	left: 17px;
+	top: 165px;
+}
+        #bebek a {
+            color:#AFAAA6;
+        }
+        #bebek a:hover
+        {
+            color:white;
+        }
+#user a
+{
+   
+   color:#AFAAA6;	
+}
+#user a:hover
+{
+   
+   color:white;
+}
+#user {
+	position: absolute;
+	width: 30px;
+	height: 22px;
+	z-index: 2;
+	left: 17px;
+	top: 16px;
+}
+#slider {
+	position: absolute;
+	width: 30px;
+	height: 22px;
+	z-index: 2;
+	left: 17px;
+	top: 64px;
+}
+#slider a
+{
+   
+   color:#AFAAA6;	
+}
+#slider a:hover
+{
+   
+   color:white;
+}
+#doktor {
+	position: absolute;
+	width: 30px;
+	height: 22px;
+	z-index: 2;
+	left: 17px;
+	top: 113px;
+}
+#doktor a
+{
+   
+   color:#AFAAA6;	
+}
+#doktor a:hover
+{
+   
+   color:white;
+}
+#randevu {
+	position: absolute;
+	width: 30px;
+	height: 22px;
+	z-index: 2;
+	left: 17px;
+	top: 216px;
+}
+#randevu a
+{
+   
+   color:#AFAAA6;	
+}
+#randevu a:hover
+{
+   
+   color:white;
+}
+#mesaj {
+	position: absolute;
+	width: 30px;
+	height: 22px;
+	z-index: 2;
+	left: 17px;
+	top: 266px;
+}
+#mesaj a
+{
+   
+   color:#AFAAA6;	
+}
+#mesaj a:hover
+{
+   
+   color:white;
+}
+#icerik {
+	position: absolute;
+	width: 980px;
+	height: 610px;
+	z-index: 3;
+	left: 220px;
+	top: 52px;
+	background-color: #CCCCCC;
+}
+.gn {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 24px;
+	color:#E02221;
+	line-height:50px;
+}
+#admin {
+	position: absolute;
+	width: 200px;
+	height: 39px;
+	z-index: 4;
+	left: 985px;
+	top: 5px;
+}
+#hosgeldin {
+	position: absolute;
+	width: 200px;
+	height: 27px;
+	z-index: 2;
+	left: 530px;
+	top: 12px;
+}
+#kapsayici #hosgeldin {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+	color: #FFF;
+}
+#options {
+	position: absolute;
+	width: 30px;
+	height: 22px;
+	z-index: 2;
+	left: 17px;
+	top: 310px;
+}
+#options a
+{
+   
+   color:#AFAAA6;	
+}
+#options a:hover
+{
+   
+   color:white;
+}
+#cikisyap {
+	position: absolute;
+	width: 137px;
+	height: 37px;
+	z-index: 2;
+	left: 1050px;
+	top: 7px;
+}
+        .sn {
+            background-color:white;
+            color:#1F1F1F;
+            font-size:20px;
+            font-weight:bold;
+        }
+.sn:hover
+       {
+           background-color:#E02221;
+           color:white;
+           transition-duration:0.9s;
+           -webkit-transition-duration:0.9s;
+           -moz-transition-duration:0.9s;
+           -o-transition-duration:0.9s;
+           -ms-transition-duration:0.9s;
+       }
+</style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body bgcolor="#CCCCCC">
+    <form id="form1" runat="server">
+    <div id="kapsayici">
+        
+
+       
+        <div class="banner"><span class="baslik">&nbsp;&nbsp; Hastane </span><span class="gn">Yönetim</span><span class="baslik"> Paneli</span>
+
+            <div id="hosgeldin">Hoşgeldin <asp:Label ID="Label1" runat="server" Text=""></asp:Label></div>
+            <div id="cikisyap">
+            <asp:Button ID="Button1" runat="server" CssClass="sn" Height="39px" Text="Çıkış Yap" Width="135px" OnClick="Button1_Click" />
+        </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+  <div class="solmenu">
+  <div id="options"><a href="#"><i class="fas fa-cog"></i></a></div>
+<div id="mesaj"><a href="#"><i class="fas fa-envelope"></i></a></div>
+<div id="randevu"><a href="#"><i class="fas fa-calendar-alt"></i></a></div>
+<div id="doktor"><a href="#"><i class="fas fa-stethoscope"></i></a></div>
+<div id="slider"><a href="#"><i class="fas fa-sliders-h"></i></a></div>
+<div id="user"><a href="#"><i class="fas fa-user"></i></a></div>
+
+       <div id="bebek"><a href="#"><i class="fas fa-child"></i></a></div>
+<ul>
+
+      <li><a href="uyeislemleri.aspx">Üye İşlemleri</a></li>
+      <li><a href="sliderislemleri.aspx">Slider İşlemleri</a></li>
+      <li><a href="doktorislemleri.aspx">Doktor İşlemleri</a></li>
+      <li><a href="bebekislemleri.aspx">Bebek İşlemleri</a></li>
+      <li><a href="randevular.aspx">Randevu İşlemleri</a></li>
+      <li><a href="mesajlar.aspx">Mesajlar</a></li>
+      <li><a href="ayarlar.aspx">Ayarlar</a></li>
+
+    </ul>
+  </div>
+            </asp:ContentPlaceHolder>
+  <div id="icerik">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">    
+        </asp:ContentPlaceHolder></div>
+</div>
+
+
+
+
+
+
+    
+    </form>
+</body>
+</html>
